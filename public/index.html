@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>📔 Digital Journal</title>
+  <link rel="stylesheet" href="journal-styles.css">
+</head>
+<body>
+
+  <!-- 🔐 Auth Section -->
+  <div id="authModal" class="modal">
+    <div class="auth-container">
+      <h1>Digital Journal</h1>
+      <div class="auth-tabs">
+        <button class="auth-tab active" data-tab="login">Login</button>
+        <button class="auth-tab" data-tab="signup">Signup</button>
+      </div>
+
+      <!-- Login Form -->
+      <form id="login-form" class="auth-form active">
+        <input type="email" id="loginEmail" placeholder="Email" required>
+        <input type="password" id="loginPassword" placeholder="Password" required>
+        <button type="submit" class="btn-primary">Login</button>
+      </form>
+
+      <!-- Signup Form -->
+      <form id="signup-form" class="auth-form">
+        <input type="text" id="signupUsername" placeholder="Username" required>
+        <input type="email" id="signupEmail" placeholder="Email" required>
+        <input type="password" id="signupPassword" placeholder="Password" required>
+        <button type="submit" class="btn-primary">Signup</button>
+      </form>
+    </div>
+  </div>
+
+  <!-- 📝 App Section -->
+  <div id="app" style="display:none;">
+    <aside class="sidebar">
+      <h2>📔 My Journals</h2>
+      <button id="newJournalBtn" class="btn-primary">+ New Journal</button>
+      <div id="journalsList"></div>
+      <button id="logoutBtn" class="btn-secondary">Logout</button>
+    </aside>
+
+    <main class="main">
+      <header>
+        <h1 id="currentJournalTitle">Select a Journal</h1>
+        <button id="newEntryBtn" class="btn-primary">+ New Entry</button>
+      </header>
+
+      <section id="entriesList" class="entries-list"></section>
+
+      <section id="entryEditor" class="editor" style="display:none;">
+        <input id="entryTitle" placeholder="Entry Title">
+        <div id="richEditor" contenteditable="true" class="rich-editor" placeholder="Start writing..."></div>
+        <div class="editor-actions">
+          <button id="saveEntryBtn" class="btn-primary">Save</button>
+          <button id="closeEditorBtn" class="btn-secondary">Close</button>
+        </div>
+      </section>
+    </main>
+  </div>
+
+  <script src="journal-app.js"></script>
+</body>
+</html>
